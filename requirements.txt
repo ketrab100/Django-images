@@ -1,0 +1,5 @@
+django>=3.2.4,>3.3
+djangorestframework>=3.12.3,<3.13
+psycopg2
+pytz==2022.6
+Pillow>=8.2.0,<8.3.0
