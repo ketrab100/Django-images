@@ -8,11 +8,15 @@ from django.contrib.postgres.fields import ArrayField
 
 
 class Tier(models.Model):
-    name = models.CharField(max_length=50, blank=False, null=False)
+    name = models.CharField(max_length=50, blank=False,
+                            null=False, unique=True)
     resolutions = ArrayField(
         models.PositiveIntegerField(), blank=True, null=True)
     unlimited_resolution = models.BooleanField(default=False)
     active_link_share = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
 
 
 class UserManager(BaseUserManager):
@@ -38,6 +42,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     tier = models.ForeignKey(
         to=Tier, on_delete=models.CASCADE, null=False, default=1)
-    object = UserManager()
+    objects = UserManager()
 
     USERNAME_FIELD = 'email'

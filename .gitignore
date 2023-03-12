@@ -1,4 +1,6 @@
 __pycache__/
 *.py[cod]
 dev-static-data
+dev-db-data
+
 

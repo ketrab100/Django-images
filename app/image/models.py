@@ -15,3 +15,6 @@ class Image(models.Model):
     name = models.CharField(max_length=50, null=False)
     image = models.ImageField(null=False, upload_to=image_file_path)
     user = models.ForeignKey(to=User, null=False, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
