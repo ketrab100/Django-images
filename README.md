@@ -1,5 +1,5 @@
 # Django-images
-To run project execute ```docker-copmose up``` in ./app directory.
+To run project execute ```docker-copmose up``` in main directory.
 First migration creates superuser with:
 * email = admin@gmail.com
 * password = adminPass123!
