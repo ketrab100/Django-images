@@ -36,8 +36,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    tier = models.ForeignKey(to=Tier, on_delete=models.SET_NULL, null=True)
+    tier = models.ForeignKey(
+        to=Tier, on_delete=models.CASCADE, null=False, default=1)
     object = UserManager()
 
     USERNAME_FIELD = 'email'
-

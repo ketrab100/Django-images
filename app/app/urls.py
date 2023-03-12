@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('images/', include('image.urls'))
 ]
+urlpatterns += [path('api-auth/', include('rest_framework.urls')),]
 
 urlpatterns += static(
     settings.MEDIA_URL,
